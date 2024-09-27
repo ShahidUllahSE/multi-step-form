@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Step1 from './Components/Step1';
+import Step2 from './Components/Step2';
+import Final from './Components/Final';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mx-auto">
+      <Routes>
+        <Route path="/" element={<Step1 />} />
+        <Route path="/AddFamilyMembers" element={<Step2 />} />
+        <Route path="/result" element={<Final />} />
+      </Routes>
     </div>
   );
 }
